@@ -1,6 +1,8 @@
-# vue-weather
+# A weather forecast project 
 
-> A Vue.js project
+> this is a vue project,  buddled by webpack .    
+
+
 
 ## Build Setup
 
