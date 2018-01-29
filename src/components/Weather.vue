@@ -2,7 +2,7 @@
   <div>
     <div class="page-swipe">
       <mt-swipe :show-indicators="false">
-        <mt-swipe-item class="slide1">
+        <mt-swipe-item class="slide">
           <mt-header title="天气预报">
             <router-link to="/" slot="left">
               <mt-button icon="back">返回</mt-button>
@@ -98,8 +98,10 @@ export default {
   z-index: 3;
   background-image: url(../assets/3.png);
 }
-.slide1 {
-  background-color: #0089dc;
+.slide {
+  /* background-color: #0089dc; */
+  background-image: url(../assets/3.png);
+  
   color: #fff;
 }
 section {
@@ -107,7 +109,7 @@ section {
 }
 .recent {
   display: flex;
-  height: 60px;
+  height: 90px;
   line-height: 1;
   justify-content: center;
   align-items: center;
@@ -137,14 +139,22 @@ section.life .life-list {
   /* display: flex; */
   box-sizing: border-box;
   height: 50vw;
+  clear: both;
 }
 .life-list li {
   width: 25%;
   height: 25vw;
-  /* line-height: 1; */
   box-sizing: border-box;
   display: inline-block;
   float: left;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+.life-list li:nth-child(4n){
+  border-right: 0;
+}
+.life-list li:nth-child(n+5){
+  border-bottom: none;
 }
 footer{
   padding-bottom: 10px;
