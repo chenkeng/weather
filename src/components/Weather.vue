@@ -7,12 +7,18 @@
             <router-link to="/" slot="left">
               <mt-button icon="back">返回</mt-button>
             </router-link>
-          <mt-button icon="more" slot="right"></mt-button>
-        </mt-header>
-        </mt-swipe-item>
-      </mt-swipe>
+            <mt-button icon="more" slot="right"></mt-button>
+          </mt-header>
 
-      <section class="container recent">
+        </mt-swipe-item>
+        <div class="landscape">
+          <div class="layer1"></div>
+          <div class="layer2"></div>
+          <div class="layer3"></div>
+        </div>
+      </mt-swipe>
+    </div> 
+    <section class="container recent">
         <div class="today">
           今天
         </div>
@@ -20,9 +26,28 @@
           明天
         </div>
       </section>
-    </div> 
-        <p>这里是weather页面</p>
-        <h1>{{msg}}</h1>
+    <section class="hours">
+      <div>
+        显示每个小时的天气
+      </div>
+    </section>
+    <section class="days">
+        <div>
+          显示一周的天气
+        </div>
+    </section>
+    <section class="life">
+      <ul class="life-list">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+        <li class="item">5</li>
+        <li class="item">6</li>
+        <li class="item">7</li>
+        <li class="item">8</li>
+      </ul>
+    </section>
   </div>
 </template>
 <script>
@@ -36,34 +61,84 @@ export default {
 };
 </script>
 <style>
-.page-swipe{
-  background-image: -webkit-linear-gradient(-90deg,#3bbcff,#4af4ff);
+.page-swipe {
+  background-image: -webkit-linear-gradient(-90deg, #3bbcff, #4af4ff);
 }
 .mint-swipe {
   height: 300px;
   color: #fff;
   font-size: 30px;
   text-align: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .mint-swipe-item {
   line-height: 300px;
 }
-
+.landscape {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+/* .landscape .layer1 {
+  z-index: 1;
+  background-image: url(../assets/1.png);
+}
+.landscape .layer2 {
+  z-index: 2;
+  background-image: url(../assets/2.png);
+} */
+.landscape .layer3 {
+  z-index: 3;
+  background-image: url(../assets/3.png);
+}
 .slide1 {
   background-color: #0089dc;
   color: #fff;
 }
-.recent{
+section {
+  margin-bottom: 20px;
+}
+.recent {
   display: flex;
   height: 60px;
   line-height: 1;
   justify-content: center;
-  
+  align-items: center;
+  background-color: #fff;
+  /* margin-bottom: 10px; */
+  /* padding-top: 26px; */
 }
-.recent .today,.recent .tomorrow{
+.recent .today,
+.recent .tomorrow {
   flex: 1;
+}
+section.hours {
+  height: 200px;
+  /* line-height: 1; */
+  background-color: #fff;
+}
+section.days {
+  background-color: #fff;
+  height: 300px;
+}
+section.life {
+  background-color: #fff;
+  /* height: 160px; */
+  width: 100%;
+}
+section.life .life-list {
+  /* display: flex; */
+  box-sizing: border-box;
+  height: 50vw;
+}
+.life-list li {
+  width: 25%;
+  height: 25vw;
+  /* line-height: 1; */
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
 }
 </style>
 
