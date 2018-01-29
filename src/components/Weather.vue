@@ -48,6 +48,12 @@
         <li class="item">8</li>
       </ul>
     </section>
+    <footer>
+      <div class="link">
+        <a href="">数据来源于中国天气网</a>
+      </div>
+      <div class="copyright">Copyright &copy; 2018 All Rights Reserved</div>
+    </footer>
   </div>
 </template>
 <script>
@@ -114,7 +120,7 @@ section {
   flex: 1;
 }
 section.hours {
-  height: 200px;
+  height: 120px;
   /* line-height: 1; */
   background-color: #fff;
 }
@@ -139,6 +145,19 @@ section.life .life-list {
   box-sizing: border-box;
   display: inline-block;
   float: left;
+}
+footer{
+  padding-bottom: 10px;
+  color:#b2b2b2;
+}
+.link{
+  line-height: 20px;
+  height: 20px;
+}
+.link a{
+  font-size: 12px;
+  color: #b2b2b2;
+  text-decoration: none;
 }
 </style>
 
