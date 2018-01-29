@@ -7,7 +7,7 @@
 <script>
 export default {
   name: "Weather",
-  data () {
+  data() {
     return {
       msg: "welcome to weather forecast!"
     };
