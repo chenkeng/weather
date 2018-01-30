@@ -7,16 +7,16 @@
             <router-link to="/" slot="left">
               <mt-button icon="back">返回</mt-button>
             </router-link>
-            <mt-button icon="more" slot="right"></mt-button>
+            <!-- <mt-button icon="more" slot="right"></mt-button> -->
           </mt-header>
 
         </mt-swipe-item>
-        <div class="landscape">
-          <div class="layer1"></div>
-          <div class="layer2"></div>
-          <div class="layer3"></div>
-        </div>
       </mt-swipe>
+      <div class="landscape">
+        <div class="layer1"></div>
+        <div class="layer2"></div>
+        <div class="layer3"></div>
+      </div>
     </div> 
     <section class="container recent">
         <div class="today">
@@ -69,9 +69,13 @@ export default {
 <style>
 .page-swipe {
   background-image: -webkit-linear-gradient(-90deg, #3bbcff, #4af4ff);
+  position: relative;
+}
+.mint-header{
+  background-color: unset;
 }
 .mint-swipe {
-  height: 300px;
+  height: 400px;
   color: #fff;
   font-size: 30px;
   text-align: center;
@@ -81,27 +85,40 @@ export default {
 .mint-swipe-item {
   line-height: 300px;
 }
+
 .landscape {
+  width: 100%;
+  height: 400px;
   position: absolute;
-  left: 0;
   bottom: 0;
+  left: 0;
 }
-/* .landscape .layer1 {
-  z-index: 1;
-  background-image: url(../assets/1.png);
+
+.landscape div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 102px;
+  background-position: center;
+  background-size: 100% auto;
 }
-.landscape .layer2 {
-  z-index: 2;
-  background-image: url(../assets/2.png);
-} */
-.landscape .layer3 {
-  z-index: 3;
-  background-image: url(../assets/3.png);
+
+.layer1 {
+  background: url(../assets/1.png) no-repeat;
+}
+
+.layer2 {
+  background: url(../assets/2.png) no-repeat;
+}
+
+.layer3 {
+  background: url(../assets/3.png) no-repeat;
 }
 .slide {
   /* background-color: #0089dc; */
-  background-image: url(../assets/3.png);
-  
+  /* background-image: url(../assets/3.png); */
+
   color: #fff;
 }
 section {
@@ -150,21 +167,21 @@ section.life .life-list {
   border-right: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
 }
-.life-list li:nth-child(4n){
+.life-list li:nth-child(4n) {
   border-right: 0;
 }
-.life-list li:nth-child(n+5){
+.life-list li:nth-child(n + 5) {
   border-bottom: none;
 }
-footer{
+footer {
   padding-bottom: 10px;
-  color:#b2b2b2;
+  color: #b2b2b2;
 }
-.link{
+.link {
   line-height: 20px;
   height: 20px;
 }
-.link a{
+.link a {
   font-size: 12px;
   color: #b2b2b2;
   text-decoration: none;
