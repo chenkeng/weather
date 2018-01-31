@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-swipe">
-      <mt-swipe :show-indicators="false">
+      <mt-swipe>
         <mt-swipe-item class="slide">
           <mt-header title="天气预报">
             <router-link to="/" slot="left">
@@ -9,7 +9,18 @@
             </router-link>
             <!-- <mt-button icon="more" slot="right"></mt-button> -->
           </mt-header>
-
+          <div class="air">
+            <p>空气</p>
+            <p>优</p>
+          </div>
+          <div class="degree">
+            <h1>6°</h1>
+          </div>
+          <div class="main-weather">阴</div>
+          <div class="humidity">湿度 72%</div>
+          <div class="tips">
+            <p>天气有点冷,注意保暖~</p>
+          </div>
         </mt-swipe-item>
       </mt-swipe>
       <div class="landscape">
@@ -81,11 +92,29 @@ export default {
   text-align: center;
   /* margin-bottom: 20px; */
 }
-
-.mint-swipe-item {
-  line-height: 300px;
+.air{
+  width: 80px;
+    height: 80px;
+    background-color: green;
+    border-radius: 10px;
+    margin: 4px;
 }
-
+.air p{
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+}
+.main-weather{
+  font-size: 20px;
+}
+.humidity{
+  font-size: 16px;
+  line-height: 40px;
+}
+.tips{
+  line-height: 60px;
+  font-size: 16px;
+}
 .landscape {
   width: 100%;
   height: 400px;
