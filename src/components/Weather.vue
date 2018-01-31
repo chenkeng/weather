@@ -31,15 +31,35 @@
     </div> 
     <section class="container recent">
         <div class="today">
-          今天
+          <div class="top">
+            <p>今天</p>
+            <p>1/-7°</p>
+          </div>
+          <div class="bottom">
+            <p>多云转晴</p>
+            <p><img src="" alt="图片"></p>
+          </div>
         </div>
         <div class="tomorrow">
-          明天
+         <div class="top">
+            <p>今天</p>
+            <p>1/-7°</p>
+          </div>
+          <div class="bottom">
+            <p>多云转晴</p>
+            <p><img src="" alt="图片"></p>
+          </div>
         </div>
       </section>
     <section class="hours">
       <div>
-        显示每个小时的天气
+        <ul>
+          <li>
+            <p class="true-hour">10:00</p>
+            <p><img src="" alt="图片"></p>
+            <p class="temperature">5°</p>
+          </li>
+        </ul>
       </div>
     </section>
     <section class="days">
@@ -82,7 +102,7 @@ export default {
   background-image: -webkit-linear-gradient(-90deg, #3bbcff, #4af4ff);
   position: relative;
 }
-.mint-header{
+.mint-header {
   background-color: unset;
 }
 .mint-swipe {
@@ -92,26 +112,26 @@ export default {
   text-align: center;
   /* margin-bottom: 20px; */
 }
-.air{
+.air {
   width: 80px;
-    height: 80px;
-    background-color: green;
-    border-radius: 10px;
-    margin: 4px;
+  height: 80px;
+  background-color: green;
+  border-radius: 10px;
+  margin: 4px;
 }
-.air p{
+.air p {
   font-size: 16px;
   height: 40px;
   line-height: 40px;
 }
-.main-weather{
+.main-weather {
   font-size: 20px;
 }
-.humidity{
+.humidity {
   font-size: 16px;
   line-height: 40px;
 }
-.tips{
+.tips {
   line-height: 60px;
   font-size: 16px;
 }
@@ -145,9 +165,6 @@ export default {
   background: url(../assets/3.png) no-repeat;
 }
 .slide {
-  /* background-color: #0089dc; */
-  /* background-image: url(../assets/3.png); */
-
   color: #fff;
 }
 section {
@@ -160,13 +177,20 @@ section {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  /* margin-bottom: 10px; */
-  /* padding-top: 26px; */
 }
 .recent .today,
 .recent .tomorrow {
   flex: 1;
 }
+.today .top,.today .bottom,.tomorrow .top,.tomorrow .bottom{
+  width: 100%;
+  box-sizing: border-box;
+} 
+.today .top>p,.today .bottom>p,.tomorrow .top>p,.tomorrow .bottom>p{
+  width: 50%;
+  float: left;
+}
+
 section.hours {
   height: 120px;
   /* line-height: 1; */
