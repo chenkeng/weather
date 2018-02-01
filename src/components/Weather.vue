@@ -1,28 +1,90 @@
 <template>
   <div>
     <div class="page-swipe">
-      <mt-swipe :show-indicators="false">
-        <mt-swipe-item class="slide1">
+      <mt-swipe>
+        <mt-swipe-item class="slide">
           <mt-header title="天气预报">
             <router-link to="/" slot="left">
               <mt-button icon="back">返回</mt-button>
             </router-link>
-          <mt-button icon="more" slot="right"></mt-button>
-        </mt-header>
+            <!-- <mt-button icon="more" slot="right"></mt-button> -->
+          </mt-header>
+          <div class="air">
+            <p>空气</p>
+            <p>优</p>
+          </div>
+          <div class="degree">
+            <h1>6°</h1>
+          </div>
+          <div class="main-weather">阴</div>
+          <div class="humidity">湿度 72%</div>
+          <div class="tips">
+            <p>天气有点冷,注意保暖~</p>
+          </div>
         </mt-swipe-item>
       </mt-swipe>
-
-      <section class="container recent">
+      <div class="landscape">
+        <div class="layer1"></div>
+        <div class="layer2"></div>
+        <div class="layer3"></div>
+      </div>
+    </div> 
+    <section class="container recent">
         <div class="today">
-          今天
+          <div class="top">
+            <p>今天</p>
+            <p>1/-7°</p>
+          </div>
+          <div class="bottom">
+            <p>多云转晴</p>
+            <p><img src="" alt="图片"></p>
+          </div>
         </div>
         <div class="tomorrow">
-          明天
+         <div class="top">
+            <p>今天</p>
+            <p>1/-7°</p>
+          </div>
+          <div class="bottom">
+            <p>多云转晴</p>
+            <p><img src="" alt="图片"></p>
+          </div>
         </div>
       </section>
-    </div> 
-        <p>这里是weather页面</p>
-        <h1>{{msg}}</h1>
+    <section class="hours">
+      <div>
+        <ul>
+          <li>
+            <p class="true-hour">10:00</p>
+            <p><img src="" alt="图片"></p>
+            <p class="temperature">5°</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="days">
+        <div>
+          显示一周的天气
+        </div>
+    </section>
+    <section class="life">
+      <ul class="life-list">
+        <li class="item">1</li>
+        <li class="item">2</li>
+        <li class="item">3</li>
+        <li class="item">4</li>
+        <li class="item">5</li>
+        <li class="item">6</li>
+        <li class="item">7</li>
+        <li class="item">8</li>
+      </ul>
+    </section>
+    <footer>
+      <div class="link">
+        <a href="">数据来源于中国天气网</a>
+      </div>
+      <div class="copyright">Copyright &copy; 2018 All Rights Reserved</div>
+    </footer>
   </div>
 </template>
 <script>
@@ -36,34 +98,146 @@ export default {
 };
 </script>
 <style>
-.page-swipe{
-  background-image: -webkit-linear-gradient(-90deg,#3bbcff,#4af4ff);
+.page-swipe {
+  background-image: -webkit-linear-gradient(-90deg, #3bbcff, #4af4ff);
+  position: relative;
+}
+.mint-header {
+  background-color: unset;
 }
 .mint-swipe {
-  height: 300px;
+  height: 400px;
   color: #fff;
   font-size: 30px;
   text-align: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
+}
+.air {
+  width: 80px;
+  height: 80px;
+  background-color: green;
+  border-radius: 10px;
+  margin: 4px;
+}
+.air p {
+  font-size: 16px;
+  height: 40px;
+  line-height: 40px;
+}
+.main-weather {
+  font-size: 20px;
+}
+.humidity {
+  font-size: 16px;
+  line-height: 40px;
+}
+.tips {
+  line-height: 60px;
+  font-size: 16px;
+}
+.landscape {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
-.mint-swipe-item {
-  line-height: 300px;
+.landscape div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 102px;
+  background-position: center;
+  background-size: 100% auto;
 }
 
-.slide1 {
-  background-color: #0089dc;
+.layer1 {
+  background: url(../assets/1.png) no-repeat;
+}
+
+.layer2 {
+  background: url(../assets/2.png) no-repeat;
+}
+
+.layer3 {
+  background: url(../assets/3.png) no-repeat;
+}
+.slide {
   color: #fff;
 }
-.recent{
+section {
+  margin-bottom: 20px;
+}
+.recent {
   display: flex;
-  height: 60px;
+  height: 90px;
   line-height: 1;
   justify-content: center;
-  
+  align-items: center;
+  background-color: #fff;
 }
-.recent .today,.recent .tomorrow{
+.recent .today,
+.recent .tomorrow {
   flex: 1;
+}
+.today .top,.today .bottom,.tomorrow .top,.tomorrow .bottom{
+  width: 100%;
+  box-sizing: border-box;
+} 
+.today .top>p,.today .bottom>p,.tomorrow .top>p,.tomorrow .bottom>p{
+  width: 50%;
+  float: left;
+}
+
+section.hours {
+  height: 120px;
+  /* line-height: 1; */
+  background-color: #fff;
+}
+section.days {
+  background-color: #fff;
+  height: 300px;
+}
+section.life {
+  background-color: #fff;
+  /* height: 160px; */
+  width: 100%;
+}
+section.life .life-list {
+  /* display: flex; */
+  box-sizing: border-box;
+  height: 50vw;
+  clear: both;
+}
+.life-list li {
+  width: 25%;
+  height: 25vw;
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  border-right: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+.life-list li:nth-child(4n) {
+  border-right: 0;
+}
+.life-list li:nth-child(n + 5) {
+  border-bottom: none;
+}
+footer {
+  padding-bottom: 10px;
+  color: #b2b2b2;
+}
+.link {
+  line-height: 20px;
+  height: 20px;
+}
+.link a {
+  font-size: 12px;
+  color: #b2b2b2;
+  text-decoration: none;
 }
 </style>
 
