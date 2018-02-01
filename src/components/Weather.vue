@@ -52,15 +52,32 @@
         </div>
       </section>
     <section class="hours">
-      <div>
-        <ul>
-          <li>
-            <p class="true-hour">10:00</p>
-            <p><img src="" alt="图片"></p>
-            <p class="temperature">5°</p>
-          </li>
-        </ul>
-      </div>
+      <div id="wrapper">
+        <div id="scroller">
+          <ul>
+            <li>
+              <p>10:00</p>
+              <div><img src="" alt="图片"></div>
+              <p>6°</p>
+            </li>
+            <li>
+              <p>10:00</p>
+              <div><img src="" alt="图片"></div>
+              <p>6°</p>
+            </li>
+            <li>
+              <p>10:00</p>
+              <div><img src="" alt="图片"></div>
+              <p>6°</p>
+            </li>
+            <li>
+              <p>10:00</p>
+              <div><img src="" alt="图片"></div>
+              <p>6°</p>
+            </li>
+          </ul>
+        </div>
+      </div> 
     </section>
     <section class="days">
         <div>
@@ -88,6 +105,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "Weather",
   data() {
@@ -98,147 +116,7 @@ export default {
 };
 </script>
 <style>
-.page-swipe {
-  background-image: -webkit-linear-gradient(-90deg, #3bbcff, #4af4ff);
-  position: relative;
-}
-.mint-header {
-  background-color: unset;
-}
-.mint-swipe {
-  height: 400px;
-  color: #fff;
-  font-size: 30px;
-  text-align: center;
-  /* margin-bottom: 20px; */
-}
-.air {
-  width: 80px;
-  height: 80px;
-  background-color: green;
-  border-radius: 10px;
-  margin: 4px;
-}
-.air p {
-  font-size: 16px;
-  height: 40px;
-  line-height: 40px;
-}
-.main-weather {
-  font-size: 20px;
-}
-.humidity {
-  font-size: 16px;
-  line-height: 40px;
-}
-.tips {
-  line-height: 60px;
-  font-size: 16px;
-}
-.landscape {
-  width: 100%;
-  height: 400px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-.landscape div {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 102px;
-  background-position: center;
-  background-size: 100% auto;
-}
-
-.layer1 {
-  background: url(../assets/1.png) no-repeat;
-}
-
-.layer2 {
-  background: url(../assets/2.png) no-repeat;
-}
-
-.layer3 {
-  background: url(../assets/3.png) no-repeat;
-}
-.slide {
-  color: #fff;
-}
-section {
-  margin-bottom: 20px;
-}
-.recent {
-  display: flex;
-  height: 90px;
-  line-height: 1;
-  justify-content: center;
-  align-items: center;
-  background-color: #fff;
-}
-.recent .today,
-.recent .tomorrow {
-  flex: 1;
-}
-.today .top,.today .bottom,.tomorrow .top,.tomorrow .bottom{
-  width: 100%;
-  box-sizing: border-box;
-} 
-.today .top>p,.today .bottom>p,.tomorrow .top>p,.tomorrow .bottom>p{
-  width: 50%;
-  float: left;
-}
-
-section.hours {
-  height: 120px;
-  /* line-height: 1; */
-  background-color: #fff;
-}
-section.days {
-  background-color: #fff;
-  height: 300px;
-}
-section.life {
-  background-color: #fff;
-  /* height: 160px; */
-  width: 100%;
-}
-section.life .life-list {
-  /* display: flex; */
-  box-sizing: border-box;
-  height: 50vw;
-  clear: both;
-}
-.life-list li {
-  width: 25%;
-  height: 25vw;
-  box-sizing: border-box;
-  display: inline-block;
-  float: left;
-  border-right: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-}
-.life-list li:nth-child(4n) {
-  border-right: 0;
-}
-.life-list li:nth-child(n + 5) {
-  border-bottom: none;
-}
-footer {
-  padding-bottom: 10px;
-  color: #b2b2b2;
-}
-.link {
-  line-height: 20px;
-  height: 20px;
-}
-.link a {
-  font-size: 12px;
-  color: #b2b2b2;
-  text-decoration: none;
-}
+@import "../common/style.css"
 </style>
 
 
