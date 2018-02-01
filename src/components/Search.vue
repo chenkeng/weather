@@ -1,11 +1,8 @@
 <template>
-<<<<<<< HEAD
-  <div>
-      <input type="text" name="">
-=======
+
   <div class="page-search">
     <mt-search autofocus v-model="value" :result="filterResult"></mt-search>
->>>>>>> bd167d3b292912d27217397bd6ede7e425c9510d
+
   </div>
 </template>
 
