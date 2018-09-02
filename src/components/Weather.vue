@@ -98,7 +98,7 @@
     </section>
     <footer>
       <div class="link">
-        <a href="">数据来源于中国天气网</a>
+        <a href="/liuhangkai">数据来源于中国天气网--kaige</a>
       </div>
       <div class="copyright">Copyright &copy; 2018 All Rights Reserved</div>
     </footer>
@@ -133,7 +133,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 @import "../common/style.css"
 </style>
 
