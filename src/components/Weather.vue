@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page-swipe">
-      <mt-swipe>
+      <mt-swipe :getDegree="degree">
         <mt-swipe-item class="slide">
           <mt-header title="天气预报">
             <router-link to="/" slot="left">
@@ -14,10 +14,10 @@
             <p>优</p>
           </div>
           <div class="degree">
-            <h1>6°</h1>
+            <h1>{{degree}}</h1>
           </div>
-          <div class="main-weather">阴</div>
-          <div class="humidity">湿度 72%</div>
+          <div class="main-weather">{{weather}}</div>
+          <div class="humidity">湿度 {{humidity}}</div>
           <div class="tips">
             <p>天气有点冷,注意保暖~</p>
           </div>
@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="tomorrow">
-         <div class="top">
+          <div class="top">
             <p>今天</p>
             <p>1/-7°</p>
           </div>
@@ -105,13 +105,31 @@
   </div>
 </template>
 <script>
-
+import axios from "axios";
 export default {
   name: "Weather",
   data() {
     return {
-      msg: "welcome to weather forecast!"
+      msg: "welcome to weather forecast!",
+      weather:"",
+      humidity:"",
+      degree:""
     };
+  },
+  methods:{
+    getInfo(){
+      axios.get("/api/weatherlist1.json").then(this.getInfoSucc);
+    },
+    getInfoSucc(res){
+      res=res.data.data;
+      console.log(res);
+      this.degree=res.observe.degree;
+      this.weather=res.observe.weather;
+      this.humidity=res.observe.humidity;
+    }
+  },
+  mounted(){
+    this.getInfo();
   }
 };
 </script>
